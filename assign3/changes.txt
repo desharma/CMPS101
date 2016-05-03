@@ -1,0 +1,23 @@
+//changes.txt
+//changes between the given implementation of discrete_event and the final implementation of discrete_event using a heap
+
+1. replaced original discrete_event to the heapq implementation that professor provided
+2. instead of importing pythons heapq module, manually implemented all of the functions that comprise a heap
+3. created two different classes, minHeapify && buildHeap
+4. The minHeapify class contains two functions: pushDown & pushUp
+5. pushDown inserts element at top of the heap & makes sure that the heap maintains the min-heap property with every new inserted element
+5. pushUp inserts element at bottom of the heap & makes sure that the heap maintains the same min-heap property as above
+6. The minHeapify class is called by the buildHeap class, which contains two functions, h_pop & h_push
+7. h_pop (heappop) removes the smallest element of the heap, and and calls pushDown to make sure that the heap will still hold the same min-heap property
+8. h_push (heapppush) adds an item to the top of the heap, and calls pushUp to make sure that the heap will hold the same min-heap property
+9. Both h_pop and h_push are called by the HeapPQ implementation.
+10. The first modification to the ArrayPQ that was replaced by the manual HeapPQ implementation is within init.
+11. While the given implementation creates numpy arrays for all of the variables that comprise the simulation, since we compacted our methods over two different
+classes and used lists instead of numpy arrays, our init only contains the initalized pq list, and sets the index at 0. 
+12. The original insert method contained multiple if statements to account for the cases of only vertical and only horizontal collisions, but we decided to store
+all of the data that was contained in the original init function in a tuple that contained the value and the key of the balls, and stored all of the various collision
+data within the key. 
+13. Our insert still increments by 1 and calls the h_push function that we implemented in the buildHeap class.
+14. We added just a simple call to the h_pop function in our buildHeap class.
+15. Since we stored all of the satellite data within the tuple in our insert function, we only had to set the indices of the tuple that we implemented in our insert
+method, so value, key at [0], i at [1], num_collisions_i [3], etc. Our implementation of this function is similar to the professors implementation of the heappq model.

@@ -1,0 +1,16 @@
+// observations.txt
+// contains analysis about efficiency of heap-based priority queue. 
+
+While the HeapPQ and the ArrayPQ implementations run similarly for the same simulation, the HeapPQ implementation should be much faster than the ArrayPQ implementation
+for larger datasets. Even though insert and some other functions run quickly in the ArrayPQ implementation, in O(1) time, every time a value is added 
+to the priority queue, it scans over the entire array and needs to sort the value, which causes the data structure to run in O(n^2) time, which is inefficient, 
+especically as the number of values within the set increase.
+
+The HeapPQ takes log n coparisons to insert values within the priority queue and runs (O(log n) time. Therefore it is more efficent for it to scan the priority queue,
+as the Array PQ takes n^2 comparisons to scan the array, in order to ensure that the priority queue is properly ordered. Therefore the ArrayPQ runs in O(n^2) time. 
+Once the minimum value is sorted at the top of the heap, it becomes trivial to extract it, and resorting the sorted array ends up taking O(log n)in comparison to 
+O(n^2) with the Array priority queue. While we used two different classes, buildHeap, and minHeapify to insert and remove values from the heap, as well as ensure 
+that the heap maintains the min-heap property, it still takes the same time that it would if it were within the same class. The functions, pushDown & pushUp, which
+insert values from the top and bottom of the heap and ensure that they are correctly sorted, make log n comparisons and therefore take O(log n) time. buildHeap contains
+heappop and heappush functions, which insert and remove values, as well as call minHeapify to ensure that the heap holds the correct property. Therefore buildHeap
+makes log n comparisons, and takes O(log n) time.
