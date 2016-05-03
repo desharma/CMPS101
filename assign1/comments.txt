@@ -1,0 +1,24 @@
+# Comments
+
+Observations:
+
+Problem 4: 
+	
+Merge Sort: The graph shows the best and worst cases for merge sort had similair times. The function based on the ranges we chose looks linear but if we increased the range it would look more logorithmic since the time complexity of merge sort is O(nlogn). Since both the best case and worst case lines overlap so heavily we can assume both their time complexities are the same.
+	
+Insertion Sort: Based on the appearence of our worst case input for insertion sort we can know the time complexity given the worst case is quadratic, and therefore O(n^2). The worst case dwarfs the best case input which is barely visible, satisfying our hypothesis that it grows linearly as size increases, or O(n).
+
+
+
+Problem 5:
+
+For our average time graphs the x-axis is scaled by 1/10.
+
+Insertion Sort: Based on the appearence of 1,000 different permutations of random integers for our range of sizes, the overall graph exhibits a combination of linear and quadratic growth. It is not quite as steep as the worst case input but not as linear as the best case graph. This means the average time complexity lies between O(n^2) and O(n).
+
+Merge Sort: Since the time complexity no matter what order the input is going to be O(nlogn) for our ranges the graph depicted satisfies our hypothesis that as size grows for a random array of integers the time will seem to grow linearly, but for larger sizes it will become more logorithmic. 
+
+General
+
+For our graphs, the x-axis represents the size of the arrays, while the y-axis represents the time it took to sort each of the arrays.
+The files insert.pdf & merge.pdf correspond to problem #4, and the files avgInsert.pdf & avgMerge.pdf correspond to problem #5. 

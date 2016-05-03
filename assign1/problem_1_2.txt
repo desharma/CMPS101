@@ -1,0 +1,11 @@
+# Question 2:
+
+# Insertion Sort Best Case:
+For a given size n, the best case input for Insertion Sort is that the inner loop runs one time. This happens when the key element defined by the outer for loop is always smaller than the item directly next to it, or in other words the array is already sorted. In this case the inner loop will only have to make one comparison on each iteration of the outer loop, meaning the time complexity will be O(n).  
+
+# Insertion Sort Worst Case:
+The worst case happens when an array is in reverse order. This causes the inner loop to shift every element of the sorted subsection of the array to make room for the key element at the very end. In this case the time complexity is quadratic or O(n^2).
+
+# Merge Sort Best Case and Worst Case:
+In our implementation since there is no way to prematurely terminate the splitting of each subarray nor is there a way to prematurely terminate the recombination of the subarrays, the best and worst case times of it are O(nlogn). This happens no matter what order the input is in. 
+ 
