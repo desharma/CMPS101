@@ -1,0 +1,45 @@
+## analysis.txt
+## Deepak Sharma -- desharma ##
+## Kyle Ebding -- kebding ##
+
+## Problem 1 ##
+
+The if-condtional has a constant time value, and both of the for loops iterate 
+over the array n times. Therefore O((n*n)+1) = O(n^2+1) = O(n^2).
+
+## Problem 3 ##
+
+In order to multiply a 2^k x 2^k matrix with an arbitrary 2^k dimensional
+vector, it is necessary to denote the two column vectors with a size of (k/2) =
+2^(k-1) that comprise the vector v = [[v0], 
+                                      [v1]]. 
+
+To find H(k)*v, we find H(k-1)*v0 and H(k-1)*v1. To perform this operation, we 
+take the sums of H(k-1)*v0 + H(k-1)*v1 and -H(k-1)*v0 + H(k-1)*v0. 
+
+Since T(n) = H(k)*v, both of the operations H(k-1)*v0 and H(k-1)*v1 both
+run in T(n/2) time. The sums of H(k-1)*v0 + H(k-1)*v1 and -H(k-1)*v0 and H(k-1)*v1 
+run in linear time, and the Hadamard matrix runs in n time, which takes into 
+account all of the operations that can be performed upon the matrix. 
+
+This leads to the recurrence relation T(n) = 2*T(n/2) + n. 
+
+Using the master theorem,
+
+Observe that a = 2, b = 2, f(n) = n
+The function n^(log(2)2) = n^1 = n
+f(n) = n = n^(log(b)a)
+
+Therefore T(n) = O(n*log(n)). 
+
+Since brute force matrix multiplication takes O(n^2) time, and our derivation of the
+Hadamard Matrix takes O(n*log(n)), we can state that that our approach is more 
+efficient than the brute force matrix multiplication.
+
+
+## Problem 5 ##
+
+It seems that the brute force matrix multiplication of matmult is taking n^2,
+and while the appearance of the hadmatmult looks like n^2, with a much smaller
+coefficient, it is actually consistent with the graph of n log n, which confirms 
+that the HadMatMult is indeed faster than the brute-force approach of matmult. 
